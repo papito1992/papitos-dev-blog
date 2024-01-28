@@ -1,22 +1,22 @@
 export const authConfig = {
-    strategy: "jwt",
+    // strategy: "jwt",
     pages: {
         signIn: "/login",
     },
     providers: [],
     callbacks: {
         // FOR MORE DETAIL ABOUT CALLBACK FUNCTIONS CHECK https://next-auth.js.org/configuration/callbacks
-        async jwt({token, user, account}) {
+        async jwt({token, user}) {
             if (user) {
                 token.id = user.id;
                 token.isAdmin = user?.isAdmin;
             }
             return token;
         },
-        async session({session, token, account, user}) {
+        async session({session, token}) {
             if (token) {
-                session.user.id = user.id;
-                session.user.isAdmin = user?.isAdmin;
+                session.user.id = token.id;
+                session.user.isAdmin = token?.isAdmin;
             }
             return session;
         },
