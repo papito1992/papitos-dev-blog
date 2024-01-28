@@ -40,8 +40,6 @@ export const getPost = async (slug) => {
 export const getUser = async (id) => {
     noStore();
     try {
-        console.log("id")
-        console.log(id)
         connectToDb();
         const user = await User.findById(id);
         return user;

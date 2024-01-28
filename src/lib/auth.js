@@ -39,7 +39,7 @@ export const {
             if (account.provider === "github") {
                 connectToDb();
                 try {
-                    const user123 = await User.findOne({provider: account.provider},{email: user.email});
+                    const user123 = await User.findOne({$and:[{email: user.email}, {provider: account.provider}]});
                     if (!user123) {
                         const newUser = new User({
                             username: profile.login,
@@ -55,7 +55,7 @@ export const {
                 }
             }
             if (account.provider === "google") {
-                const user123 = await User.findOne({provider: account.provider},{email: user.email});
+                const user123 = await User.findOne({$and:[{email: user.email}, {provider: account.provider}]});
                 try {
                     if (!user123) {
                         const newUser = new User({

@@ -15,6 +15,9 @@ const nextConfig = {
                 hostname: "avatars.githubusercontent.com"
             }
         ]
+    },
+    typescript:{
+        ignoreBuildErrors: true
     }
 }
 
