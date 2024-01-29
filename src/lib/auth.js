@@ -89,7 +89,7 @@ const login = async (credentials) => {
         );
 
         if (!isPasswordCorrect) throw new Error("Wrong credentials!");
-        return user;
+        return user._doc
     } catch (err) {
         console.log(err);
         throw new Error("Failed to login!");
