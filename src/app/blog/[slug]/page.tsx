@@ -5,15 +5,6 @@ import {Suspense} from "react";
 import {getPost} from "@/lib/data";
 import {remark} from 'remark';
 import html from 'remark-html';
-// FETCH DATA WITH AN API
-const getData = async (slug) => {
-    const res = await fetch(`${process.env.APP_HOSTNAME}/api/blog/${slug}`);
-
-    if (!res.ok) {
-        throw new Error("Something went wrong");
-    }
-    return res.json();
-};
 
 export const generateMetadata = async ({params}) => {
     const {slug} = params;
