@@ -23,6 +23,7 @@ const AdminPosts = () => {
                 <div className={styles.post} key={post?.id}>
                     <div className={styles.detail}>
                         <Image
+                            placeholder='blur'
                             src={post?.img || "/noAvatar.png"}
                             alt=""
                             width={50}

@@ -10,13 +10,9 @@ export const getPosts = async () => {
     try {
         connectToDb();
         const posts = await Post.find();
-        // posts.json()
-        // const jsonPosts = await posts.json();
         const jsonPosts = await JSON.parse(JSON.stringify(posts));
         console.log(jsonPosts);
         console.log("all posts 999999999999999999999999999999999999999");
-        // revalidatePath("/blog");
-        // revalidatePath("/admin");
         return jsonPosts;
     } catch (err) {
         console.log(err);
@@ -25,12 +21,7 @@ export const getPosts = async () => {
 };
 
 export const addPost = async (prevState, formData) => {
-    // const title = formData.get("title");
-    // const desc = formData.get("desc");
-    // const slug = formData.get("slug");
-
     const {title, desc, slug, userId, img} = Object.fromEntries(formData);
-
     try {
         connectToDb();
         const newPost = new Post({
@@ -111,8 +102,8 @@ export const addUser = async (prevState, formData) => {
 };
 
 export const handleContactMessage = async (prevState, formData) => {
+    console.log("sending message")
     const {name, email, phone, message} = Object.fromEntries(formData);
-
     try {
         connectToDb();
         const newContactMessage = new Contact({
@@ -122,9 +113,14 @@ export const handleContactMessage = async (prevState, formData) => {
         await newContactMessage.save();
         console.log("saved to db");
         revalidatePath("/");
+
+        return {
+            responseStatus: true,
+            responseMessage: "Thank you for reaching out. Message has been received!"
+        };
     } catch (err) {
         console.log(err);
-        return {error: "Something went wrong!"};
+        return {responseStatus: true, responseMessage: "Something went wrong, please try again later."};
     }
 };
 

@@ -1,7 +1,7 @@
-import { getUsers } from "@/lib/data";
+import {getUsers} from "@/lib/data";
 import styles from "./adminUsers.module.css";
 import Image from "next/image";
-import { deleteUser } from "@/lib/action";
+import {deleteUser} from "@/lib/action";
 
 const AdminUsers = async () => {
     const users = await getUsers();
@@ -13,7 +13,9 @@ const AdminUsers = async () => {
                 <div className={styles.user} key={user.id}>
                     <div className={styles.detail}>
                         <Image
+                            placeholder='blur'
                             src={user.img || "/noAvatar.png"}
+                            priority
                             alt=""
                             width={50}
                             height={50}

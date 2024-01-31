@@ -1,4 +1,4 @@
-import { getUser } from "@/lib/data";
+import {getUser} from "@/lib/data";
 import styles from "./postUser.module.css";
 import Image from "next/image";
 
@@ -28,6 +28,7 @@ const PostUser = async ({ userId }) => {
                 alt=""
                 width={50}
                 height={50}
+                placeholder='blur'
             />
             <div className={styles.texts}>
                 <span className={styles.title}>Author</span>

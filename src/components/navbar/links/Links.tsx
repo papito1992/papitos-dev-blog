@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import {useState} from "react";
 import styles from "./links.module.css";
 import NavLink from "./navLink/navLink";
 import Image from "next/image";
-import { handleLogout } from "@/lib/action";
+import {handleLogout} from "@/lib/action";
+import menuImage123 from '../../../../public/menu.png'
 
 const links = [
     {
@@ -46,12 +47,13 @@ const Links = ({session}) => {
                         </form>
                     </>
                 ) : (
-                    <NavLink item={{ title: "Login", path: "/login" }} />
+                    <NavLink item={{title: "Login", path: "/login"}}/>
                 )}
             </div>
             <Image
                 className={styles.menuButton}
-                src="/menu.png"
+                src={menuImage123}
+                placeholder='blur'
                 alt=""
                 width={30}
                 height={30}
