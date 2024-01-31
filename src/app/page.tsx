@@ -11,7 +11,7 @@ export default function Home() {
     return (
         <div className={styles.container}>
             <div className={styles.textContainer}>
-                <h1 className={styles.title}>Papito's Dev Blog</h1>
+                <h1 className={styles.title}>Papito's Blog</h1>
                 <p className={styles.desc}>Blogger that posts about developing With Java(Spring) & NextJs.
                     Talks about Dev life topics, such as sustainable motivation, life and work balance at high
                     performance levels.
@@ -38,7 +38,10 @@ export default function Home() {
             <div className={styles.imgContainer}>
                 <Image src={hero} alt=""
                        placeholder='blur'
-                       priority fill style={{objectFit: 'scale-down'}}/>
+                       quality={100}
+                       height={300}
+                       width={600}
+                       priority style={{objectFit: 'contain', maxWidth: '100%'}}/>
             </div>
 
         </div>

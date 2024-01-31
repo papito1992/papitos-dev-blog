@@ -19,6 +19,12 @@
     flex: 1;
 }
 
+.headerText {
+    /*flex: 1;*/
+    font-size: 56px;
+    margin-bottom: 50px;
+}
+
 .form {
     display: flex;
     flex-direction: column;

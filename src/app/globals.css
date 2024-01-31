@@ -8,6 +8,10 @@
   --btn: #3673fd;
 }
 
+.backColor {
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(25%, rgba(0, 0, 0, 0.87)), color-stop(61%, rgba(255, 255, 255, 0.67)), color-stop(100%, rgba(0, 0, 0, 0.46)));
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -25,7 +25,10 @@ export default function ContactMessageForm(props) {
             setNotificationState({
                 isOpen: true,
                 notificationMessage: state.responseMessage,
-                notificationTitle: "FAILED MSG SENT"
+                notificationTitle: "FAILED",
+                timer: setTimeout(() => {
+                    setNotificationState(false);
+                }, 3000)
             });
             const timer = setTimeout(() => {
                 setNotificationState(false);
@@ -35,11 +38,10 @@ export default function ContactMessageForm(props) {
             };
         }
     }, [state]);
-
-
     return (
         <>
             <div className={styles.formContainer}>
+                <h1 className={styles.headerText}>Contact me</h1>
                 <form action={formAction} className={styles.form}>
                     <input type="text" placeholder="Name and Surname" name={"name"}/>
                     <input type="text" placeholder="Email Address" name={"email"}/>

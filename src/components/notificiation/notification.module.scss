@@ -1,5 +1,5 @@
 .message_container {
-  filter: drop-shadow(0 0 8px cyan);
+  filter: drop-shadow(0 0 8px #f6ffff);
 }
 
 .wrapper {
@@ -16,7 +16,7 @@
                   20px 100%, /* bottom left */
                   0 calc(100% - 0px) /* bottom left */
   );
-  background: #00dec5;
+  background: #fff8c0;
   padding: 2px;
   transition: all .5s;
 
@@ -49,7 +49,7 @@
     text-align: center;
     text-transform: uppercase;
     color: black;
-    background-color: #ff0;
+    background-color: #fffffd;
     border-right: .75em;
     clip-path: inherit;
   }

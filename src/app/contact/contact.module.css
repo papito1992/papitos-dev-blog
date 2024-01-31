@@ -1,6 +1,7 @@
 .container {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 100px;
 }
 
@@ -16,6 +17,7 @@
 }
 
 .formContainer {
+    max-width: 500px;
     flex: 1;
 }
 

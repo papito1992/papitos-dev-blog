@@ -11,8 +11,6 @@ export const getPosts = async () => {
         connectToDb();
         const posts = await Post.find();
         const jsonPosts = await JSON.parse(JSON.stringify(posts));
-        console.log(jsonPosts);
-        console.log("all posts 999999999999999999999999999999999999999");
         return jsonPosts;
     } catch (err) {
         console.log(err);
@@ -120,7 +118,7 @@ export const handleContactMessage = async (prevState, formData) => {
         };
     } catch (err) {
         console.log(err);
-        return {responseStatus: true, responseMessage: "Something went wrong, please try again later."};
+        return {responseStatus: false, responseMessage: "Something went wrong, please try again later."};
     }
 };
 

@@ -1,7 +1,5 @@
-import Image from "next/image";
 import styles from "./contact.module.css";
 import ContactMessageForm from "@/components/contactMessageForm/contactMessageForm";
-import contact from '../../../public/contact.png'
 
 export const metadata = {
     title: "Contact Page",
@@ -11,10 +9,13 @@ export const metadata = {
 const ContactPage = () => {
     return (
         <div className={styles.container}>
-            <div className={styles.imgContainer}>
-                <Image src={contact} alt="" placeholder='blur' priority fill className={styles.img}/>
+            {/*<div className={styles.imgContainer}>*/}
+            {/*    <Image src={contact} alt="" placeholder='blur' priority fill className={styles.img}/>*/}
+            {/*</div>*/}
+
+            <div className={styles.formContainer}>
+                <ContactMessageForm/>
             </div>
-            <ContactMessageForm/>
         </div>
     );
 };

@@ -22,7 +22,8 @@ export default function RootLayout({
                     position: "relative",
                     width: "100vw",
                     height: "100vh",
-                    // clipPath: 'inset(0 0 0 0)',
+                    // zIndex: -10,
+                    background: "radial-gradient(circle, rgba(0,0,0,0.406582701439951) 0%, rgba(0,0,0,0.36456589471726186) 100%);"
                 }}
             >
                 <div
@@ -35,13 +36,6 @@ export default function RootLayout({
                         zIndex: -22
                     }}
                 >
-                    <div style={{position: "sticky", zIndex: 22}}>
-                        <div
-                            style={{position: "fixed", bottom: "4%", right: "4%"}}
-                        >
-                            <Notification/>
-                        </div>
-                    </div>
                     <Image
                         src="https://images.pexels.com/photos/13859586/pexels-photo-13859586.jpeg"
                         priority={true}
@@ -49,6 +43,13 @@ export default function RootLayout({
                         style={{objectFit: 'cover'}}
                         alt={"Background Image"}
                     />
+                </div>
+                <div style={{position: "sticky", zIndex: 2}}>
+                    <div
+                        style={{position: "fixed", bottom: "4%", right: "4%", zIndex: 22}}
+                    >
+                        <Notification/>
+                    </div>
                 </div>
                 <div className="container">
                     <Navbar/>
